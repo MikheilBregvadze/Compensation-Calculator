@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Sora-Bold';
+    src: local('Sora-Bold'), url('./assets/fonts/Sora-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Sora-SemiBold';
+    src: local('Sora-SemiBold'), url('./assets/fonts/Sora-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Sora-Light';
+    src: local('Sora-Light'), url('./assets/fonts/Sora-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Sora-Medium';
+    src: local('Sora-Medium'), url('./assets/fonts/Sora-Medium.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    font-size: 18px;
+    box-sizing: border-box;
+    font-family: 'Sora-Light';
+    background: linear-gradient(90deg, #2B303A 0%, #3F4756 100%);
+}
+

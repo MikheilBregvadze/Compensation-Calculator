@@ -1,0 +1,246 @@
+.calculator {
+    width: 280px;
+    margin: auto;
+    color: #111317;
+}
+.calculator h3 {
+    font-size: 24px;
+    padding-top: 80px;
+    line-height: 25px;
+    letter-spacing: -0.6px;
+    font-family: 'Sora-Bold';
+}
+
+.fieldGroup * {
+    display: block;
+}
+
+.field {
+    width: 280px;
+    height: 50px;
+    position: relative;
+    margin-top: 44px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.field::before {
+    content:"";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    padding: 2px;
+    border-radius: 4px;
+    pointer-events: none;
+    background: linear-gradient(to right, #D3DAE8, #A7B7D8);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+.field::after {
+    content:"€";
+    position: absolute;
+    width: 50px;
+    text-align: right;
+    top: 15px;
+    right: 10px;
+    font-family: 'Sora-Bold';
+}
+
+.days:after {
+    content:"days";
+    position: absolute;
+    width: 50px;
+    text-align: right;
+    top: 15px;
+    right: 10px;
+    font-family: 'Sora-Bold';
+}
+
+.field input {
+    width: calc(100% - 10px);
+    height: 100%;
+    border: none;
+    margin-top: 7px;
+    font-size: 18px;
+    padding-left: 10px;
+    border-radius: 4px;
+    font-family: 'Sora-Medium';
+}
+
+.field input::-webkit-outer-spin-button,
+.field input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.field input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.field input:focus {
+    border: none;
+    outline: none;
+}
+
+.fieldGroup label {
+    height: 100%;
+    font-size: 14px;
+    font-family: "Sora-Medium";
+    transform: translateY(-24px);
+}
+
+.checkboxGroup {
+    margin-top: 21px;
+}
+
+.checkboxGroup label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-family: "Sora-Medium";
+}
+  
+.checkboxGroup input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+.checkmark {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 10%);
+}
+
+.checkmark::before {
+    content:"";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2px;
+    border-radius: 4px;
+    pointer-events: none;
+    background: linear-gradient(to right, #D3DAE8, #A7B7D8);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+
+.checkboxGroup input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.checkboxGroup .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid #0f0403;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.button {
+    width: 169px;
+    height: 60px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50px;
+    margin: 10px 0 20px 0;
+    font-family: 'Sora-Bold';
+    transition: all .1s linear;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to right, #911812, #E1261C);
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #911812 0%, #E1261C 100%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15), inset 0px -4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+    background: linear-gradient(90deg, #911812 0%, #E1261C 100%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25), inset 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.calculatedView {
+    padding: 19px 0;
+    margin-bottom: 19px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #E9EDF4;
+}
+
+.calculatedSumTitle {
+    text-align: center;
+    font-size: 14px;
+}
+
+.calculatedSum {
+    font-size: 24px;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Sora-Bold';
+}
+
+.errorMessageHidden {
+    font-size: 12px;
+}
+
+.errorMessage {
+    height: 0;
+    opacity: 0;
+    color: #E1261C;
+    font-size: 12px;
+    transition: all .2s ease-in;
+}
+
+.errorMessage.show {
+    height: 30px;
+    opacity: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+    .calculator {
+        width: 540px;
+    }
+
+    .fieldGroup {
+        display: flex;
+    }
+    .field.days {
+        margin-left: 20px;
+    }
+}

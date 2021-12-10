@@ -1,0 +1,31 @@
+.item {
+    width: 47%;
+    text-align: center;
+}
+
+.daysCount {
+    color: #111317;
+    font-size: 14px;
+    line-height: 15px;
+    font-family: "Sora-Medium";
+}
+
+.daysCount h4 {
+    color: #111317;
+    font-family: "Sora-Bold";
+}
+
+.item h2 {
+    font-size: 18px;
+    color: #111317;
+    padding-top: 10px;
+    line-height: 20px;
+    font-family: "Sora-Bold";
+}
+
+.allowance {
+    color: #7A818E;
+    font-size: 12px;
+    padding: 0 15px;
+    font-family: "Sora-Medium";
+}
